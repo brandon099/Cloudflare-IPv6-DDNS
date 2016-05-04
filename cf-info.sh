@@ -1,5 +1,6 @@
 #!/bin/sh
 # Script that will produce JSON output to help user obtain information needed for cf-ddns.sh
+#Credit to http://torb.at/cloudflare-dynamic-dns for script syntax
 
 # 1. Set "tkn" to equal your API key.
 # 2. Set "email" to equal your e-mail address

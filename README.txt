@@ -1,6 +1,6 @@
 # Cloudflare-DDNS Script
 Description: 
-Cloudflare dynamic dns script that will update your domain's public IPv4 address to the address that your server is connected to. Compatible with IPv6 enabled routers.
+Cloudflare dynamic dns script that will update your domain's public IPv4 address to the address that your server is connected to. Compatible with IPv6 enabled modems.
 
 Operating Systems tested on:
 CentOS 6.7 32 bit
@@ -23,4 +23,10 @@ Credit belongs primarily to http://torb.at/cloudflare-dynamic-dns as most of the
 
 To get the zone ID number of the zone record that you will be updating use cf-info.sh script. Place the output of the script in a JSON interpreter which will give you the zone records with their associated Zone IDs and other relevant information.
 
+
+
+
+
 Once the script is configured properly, execute it and it will update the A record of the associated zone to the IP address of the network the computer the script is being run from.
+
+Once confirmed it is working, it can be configured as a cron job to run frequently to avoid any downtime if the IP address of your modem changes.

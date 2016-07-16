@@ -1,7 +1,13 @@
 #!/bin/sh
 
-[ ! -f /var/tmp/current_ip.txt ] && touch /var/tmp/currentip.txt
+if [ ! -f /var/tmp/current_ip.txt ] && touch /var/tmp/currentip.txt; then
+echo "Running script"
+sleep 2
 
+else
+echo "Permissions for /var/tmp/current_ip.txt are not correct for user executing cf-ddns.sh. Please change the ownership of /var/tmp/current_ip.txt to the user running the DDNS script."
+exit 1
+fi
 
 
 ##Assign needed information to these variables##

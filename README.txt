@@ -37,4 +37,4 @@ Edit the text of cf-ddns.sh and replace the requested information with the infor
 
 Once the script is configured properly, execute it and it will update the A record of the associated zone to the IP address of the network the computer the script is being run from.
 
-Once confirmed it is working, it can be configured as a cron job to run frequently to avoid any downtime if the public IP address of your modem changes.
+Once confirmed it is working, it can be configured as a cron job or automation program such as Jenkins to run frequently to avoid any downtime if the public IP address of your modem changes.

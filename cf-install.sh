@@ -42,16 +42,7 @@ curl https://www.cloudflare.com/api_json.html \
   -d email=$email \
   -d z=$domain
 
-
-
-
-
-
-<<<<<<< HEAD
 sleep 5 
-=======
-sleep 15 
->>>>>>> ace72a4f35042902b2d0e678e315d1e5f23aff9a
 
 echo -e ' \t '
 echo -e ' \t '
@@ -83,16 +74,12 @@ echo "Running script"
 sleep 2
 
 else 
-<<<<<<< HEAD
 echo
 "Error!"
 echo -e ' \t '
 
 "If you received a permission denied error that means permissions for /var/tmp/current_ip.txt are not correct for user executing cf-ddns.sh. Please change the ownership of /var/tmp/current_ip.txt to the user running the DDNS script. If you received a different error please reach out to the author at http://www.primal.support/contact."
 exit 1
-=======
-echo "Permissions for /var/tmp/current_ip.txt are not correct for user executing cf-ddns.sh. Please change the ownership of /var/tmp/current_ip.txt to the user running the DDNS script."
->>>>>>> ace72a4f35042902b2d0e678e315d1e5f23aff9a
 fi 
 
 ##Set variable NEWIP to the public IPv4 address of the network that your server is currently connected to##

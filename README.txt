@@ -8,6 +8,7 @@ CentOS 7 64 bit
 Ubuntu 14.04 32 bit
 Ubuntu Server 15.10 64 bit
 
+
 Credit belongs primarily to http://torb.at/cloudflare-dynamic-dns as most of the syntax in this DDNS script was derived from script shown on website, with some modifications needed for compatibility for IPv6.
 
 
@@ -29,6 +30,12 @@ To get the zone ID number of the zone record that you will be updating use cf-in
 TO INSTALL:
 
 Wizard: Execute cf-install.sh and it will walk you through setting up the script. 
+
+Main required programs for cf-install.sh to work: 
+jq (https://stedolan.github.io/jq/)
+grep
+curl
+
 
 OR
 

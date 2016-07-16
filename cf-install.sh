@@ -2,7 +2,7 @@
 
 ###Installer for cf-ddns.sh###
 
-echo "This script will help you configure a working Cloudflare DDNS script on a Linux machine"
+echo "This script will help you configure a working Cloudflare DDNS script on a Linux machine. Please ensure that the programs 'jq' and 'grep' are installed in order for the installer to work"
 echo -e ' \t '
 
 sleep 2
@@ -17,34 +17,35 @@ read email
 
 echo -e ' \t '
 
-echo "Please enter the main zone record (a.k.a. domain name)"
+echo "Please enter the domain name associated with your Cloudflare account"
 read domain
 
 echo -e ' \t '
 
 
 
-
-
-
-
-
-echo "Loading JSON output.... The following JSON output will be quite large. Starting with the first bracket and ending with the last, copy the output and place it in a JSON interpreter (http://json.parser.online.fr/). Find the rec id for the A record that you would like to associate with the cf-ddns script."
-
-sleep 16
+echo "Loading Cloudflare information...."
+sleep 3
 echo -e ' \t '
 echo -e ' \t '
 echo -e ' \t '
 
-curl https://www.cloudflare.com/api_json.html \
+{ curl https://www.cloudflare.com/api_json.html \
   -d 'a=rec_load_all' \
   -d tkn=$API \
   -d email=$email \
   -d z=$domain
+} > json.txt
 
-sleep 5 
+cat json.txt | jq '.' | grep -B 5 '"type": "A".'
+
+sleep 2
 
 echo -e ' \t '
+echo -e ' \t '
+echo -e ' \t '
+echo "Locate the rec_id and zone name of the A record you would like to assign to the DDNS script"
+sleep 2
 echo -e ' \t '
 echo -e ' \t '
 read -n1 -r -p "Press space to continue..." key
@@ -57,7 +58,7 @@ if [ "$key" = '' ]; then
     read id
     
     echo -e ' \t '
-    echo "Please enter the name of your A record (i.e. "server" in server.example.com)"
+    echo "Please enter the zone name of your A record (i.e. "server" in server.example.com)"
     read name
 
 

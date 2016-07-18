@@ -71,15 +71,15 @@ if [ "\$NEWIP" = "\$CURRENTIP" ]; then
 else
   echo "IP address has changed, updating CloudFlare..."
 
-  curl https://www.cloudflare.com/api_json.html \
-    -d 'a=rec_edit'\
-    -d 'tkn=$API_KEY'\
-    -d '=$EMAIL'\
-    -d 'z=$DOMAIN'\
-    -d 'id=$REC_ID'\
-    -d 'type=A'\
-    -d 'name=$ZONE_NAME'\
-    -d 'ttl=1'\
+  curl https://www.cloudflare.com/api_json.html \\
+    -d 'a=rec_edit'\\
+    -d 'tkn=$API_KEY'\\
+    -d '=$EMAIL'\\
+    -d 'z=$DOMAIN'\\
+    -d 'id=$REC_ID'\\
+    -d 'type=A'\\
+    -d 'name=$ZONE_NAME'\\
+    -d 'ttl=1'\\
     -d "content=\$NEWIP"
 
   # Update the tracked IP address
